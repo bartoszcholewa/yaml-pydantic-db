@@ -1,0 +1,98 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: example
+  template:
+    metadata:
+      labels:
+        app: example
+    spec:
+      containers:
+      - name: example-container
+        image: example-image
+        ports:
+        - containerPort: 8080
+users:
+  - name: John Doe
+    age: 35
+    email: john.doe@example.com
+    address:
+      street: 123 Main St
+      city: Anytown
+      state: CA
+      zip: 98765
+    preferences:
+      color: blue
+      food:
+        - pizza
+        - sushi
+        - tacos
+    accounts:
+      - type: checking
+        number: 1234567890
+        balance: 5000.00
+      - type: savings
+        number: 9876543210
+        balance: 10000.00
+        interestRate: 0.03
+  - name: Jane Smith
+    age: 29
+    email: jane.smith@example.com
+    address:
+      street: 456 Oak Rd
+      city: Someplace
+      state: NY
+      zip: 12345
+    preferences:
+      color: green
+      food:
+        - salad
+        - steak
+    accounts:
+      - type: checking
+        number: 5555555555
+        balance: 2500.75
+products:
+  - id: 1
+    name: Product A
+    description: This is product A
+    price: 19.99
+    categories:
+      - electronics
+      - gadgets
+  - id: 2
+    name: Product B
+    description: This is product B
+    price: 29.95
+    categories:
+      - books
+      - non-fiction
+  - id: 3
+    name: Product C
+    description: This is product C
+    price: 9.99
+    categories:
+      - clothing
+      - accessories
+servers:
+  - name: web01
+    ip: 10.0.0.5
+    roles:
+      - web
+      - proxy
+    config:
+      max_clients: 1000
+      ssl_cert: /etc/ssl/certs/web01.crt
+  - name: db01
+    ip: 10.0.0.6
+    roles:
+      - database
+    config:
+      db_type: postgresql
+      version: 13
+      data_dir: /var/lib/pgsql/data
